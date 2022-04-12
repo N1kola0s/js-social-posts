@@ -2,8 +2,23 @@ img {
     max-width: 100%;
 }
 
-.icon_image {
-    height:40px;
-    width: 40px;
+.card {
+    width: 40%;
+    margin: auto;
+    box-shadow: 0px 0px 5px 1px #80808047;
+   
 }
+
+.icon_image {
+   margin: 1rem 1.5rem;
+}
+
+h5 {
+    line-height: 0.5;
+}
+
+.date, .post_like {
+    color:rgb(101, 100, 100);
+}
+
 

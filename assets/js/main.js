@@ -32,20 +32,20 @@ const posts = [
 {
     id_post:1,
     user_name: 'Phil Mangione',
-    user_image:'https://picsum.photos/200/300',
+    user_image:'https://picsum.photos/60/60',
     date:'05-27-2021',
-    text:'Questo è un testo di prova del primo post',
-    post_image: 'https://picsum.photos/200/300',
+    text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas amet voluptates molestias nisi corrupti excepturi saepe nemo repudiandae',
+    post_image: 'https://picsum.photos/200/100',
     like:40
 
 },
 {
     id_post:2,
     user_name: 'Sofia Perlari',
-    user_image: 'https://picsum.photos/200/300',
+    user_image: 'https://picsum.photos/60/60',
     date: '07-20-2022',
-    text:'Questo è un testo di prova del secondo post',
-    post_image: 'https://picsum.photos/200/300',
+    text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas amet voluptates molestias nisi corrupti excepturi saepe nemo repudiandae',
+    post_image: 'https://picsum.photos/200/100',
     like: 30
 
 }
@@ -55,11 +55,11 @@ const posts = [
 
 //Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post del nostro feed.
 
-/* const socialElement = document.querySelector(".post") */
+const socialElement = document.querySelector(".post")
 
 
-/* posts.forEach((post, i) =>{ */
-    /* post = posts[i]; */
+posts.forEach((post, i) =>{ 
+     post = posts[i]; 
 
     /* console.log(typeof post);  */
 
@@ -73,24 +73,37 @@ const posts = [
     console.log("_____________________")  */
 
 
-    /* let card = document.createElement("div"); */
+    let card = document.createElement("div");
 
     //stampo il contenuto al suo interno
-       /*  card.innerHTML =  
+        card.innerHTML =  
         `
-        <div class="card">
-            <div class="name">${post.user_name}</div> 
-            <div class="date">${post.date}</div>
-            <img src="${post.user_image}" alt="profile-image" >
-            <div class="text">${post.text}</div>
-            <img src="${post.post_image}" alt="post-image">
-            <div>Mi piace</div>
-            <div class="like">${post.like}</div>
-        </div>  
+            <div class="card my-5">
+                    <div class="card_top d-flex align-items-center pt-4">
+
+                        <div class="icon_image d-inline-block">
+                            <img class="rounded-circle"src="${post.user_image}" alt="profile-image" >
+                        </div>
+
+                        <div class="profile_info d-inline-block">
+                            <h5 class="name">${post.user_name}</h5> 
+                            <div class="date">${post.date}</div>
+                        </div>
+                    </div>
+                    
+                    <p class="text px-4 mb-0">${post.text}</p>
+
+                    <img class="p-4" src="${post.post_image}" alt="post-image">
+
+                    <div class="post_like d-flex justify-content-around align-items-center pb-4">
+                        <div><i class="fa-solid fa-thumbs-up"></i> Mi piace</div>
+                        <div class="like">Piace a ${post.like} persone</div>
+                    </div>   
+                </div>  
       
-        `;  */
+        `; 
 
     //appendo quanto creato all'interno di socialElement nella dom
-    /* socialElement.append(card); */
+    socialElement.append(card);
    
-/* }) */
+ }) 
