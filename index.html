@@ -15,19 +15,32 @@
 </head>
 <body>
 
-    <div class="post">
+    <div class="container">
 
-        <div class="card">
-            <div class="name">${post.user_name}</div> 
-            <div class="date">${post.date}</div>
-            <img src="${post.user_image}" alt="profile-image" >
-            <div class="text">${post.text}</div>
-            <img src="${post.post_image}" alt="post-image">
-            <div>Mi piace</div>
-            <div class="like">${post.like}</div>
-        </div>  
+        <div class="post">
 
-    
+            <div class="card">
+                <div class="card_top">
+                    <div class="icon_image d-inline-block">
+                        <img class="img-fluid" src="${post.user_image}" alt="profile-image" >
+                    </div>
+
+                    <div class="profile_info d-inline-block">
+                        <div class="name">Francesco</div> 
+                        <div class="date">${post.date}</div>
+                    </div>
+                </div>
+                
+                <p class="text">${post.text}</p>
+
+                <img src="${post.post_image}" alt="post-image">
+                <div class="post_like">
+                    <div>Mi piace</div>
+                    <div class="like">${post.like}</div>
+                </div>   
+            </div>  
+        </div>
+
     </div>
 
 <script src="./assets/js/main.js"></script> 
