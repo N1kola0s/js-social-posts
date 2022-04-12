@@ -97,7 +97,7 @@ posts.forEach((post, i) =>{
 
                     <div class="post_like d-flex justify-content-around align-items-center pb-4">
                         <div><i class="fa-solid fa-thumbs-up"></i> Mi piace</div>
-                        <div class="like">Piace a ${post.like} persone</div>
+                        <div class="like">Piace a <strong>${post.like}</strong> persone</div>
                     </div>   
                 </div>  
       
