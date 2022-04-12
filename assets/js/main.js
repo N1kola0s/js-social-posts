@@ -33,7 +33,7 @@ const posts = [
     id_post:1,
     user_name: 'Phil Mangione',
     user_image:'https://picsum.photos/60/60',
-    date:'05-27-2021',
+    date:'05/27/2021',
     text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas amet voluptates molestias nisi corrupti excepturi saepe nemo repudiandae',
     post_image: 'https://picsum.photos/200/100',
     like:40
@@ -43,7 +43,7 @@ const posts = [
     id_post:2,
     user_name: 'Sofia Perlari',
     user_image: 'https://picsum.photos/60/60',
-    date: '07-20-2022',
+    date: '07/20/2022',
     text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas amet voluptates molestias nisi corrupti excepturi saepe nemo repudiandae',
     post_image: 'https://picsum.photos/200/100',
     like: 30
