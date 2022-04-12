@@ -15,7 +15,21 @@
 </head>
 <body>
 
-<script src="./assets/js/main.js"></script>
+    <div class="post">
+
+        <div class="card">
+            <div class="name">${post.user_name}</div> 
+            <div class="date">${post.date}</div>
+            <img src="${post.user_image}" alt="profile-image" >
+            <div class="text">${post.text}</div>
+            <img src="${post.post_image}" alt="post-image">
+            <div>Mi piace</div>
+            <div class="like">${post.like}</div>
+        </div>  
+
     
+    </div>
+
+<script src="./assets/js/main.js"></script> 
 </body>
 </html>
