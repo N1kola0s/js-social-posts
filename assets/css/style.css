@@ -1,3 +1,5 @@
+/* commons */
+
 body{
     background-color: #023047;
 }
@@ -5,6 +7,16 @@ body{
 img {
     max-width: 100%;
 }
+
+h1{
+    font-weight: 800;
+}
+
+h5 {
+    line-height: 0.5;
+}
+
+/* MAIN */
 
 .card {
     width: 40%;
@@ -15,14 +27,6 @@ img {
 
 .icon_image {
    margin: 1rem 1.5rem;
-}
-
-h1{
-    font-weight: 800;
-}
-
-h5 {
-    line-height: 0.5;
 }
 
 .date, .post_like {
