@@ -55,11 +55,11 @@ const posts = [
 
 //Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post del nostro feed.
 
-const socialElement = document.querySelector(".post")
+/* const socialElement = document.querySelector(".post") */
 
 
-posts.forEach((post, i) =>{
-    post = posts[i];
+/* posts.forEach((post, i) =>{ */
+    /* post = posts[i]; */
 
     /* console.log(typeof post);  */
 
@@ -73,7 +73,7 @@ posts.forEach((post, i) =>{
     console.log("_____________________")  */
 
 
-    let card = document.createElement("div");
+    /* let card = document.createElement("div"); */
 
     //stampo il contenuto al suo interno
        /*  card.innerHTML =  
@@ -91,6 +91,6 @@ posts.forEach((post, i) =>{
         `;  */
 
     //appendo quanto creato all'interno di socialElement nella dom
-    socialElement.append(card);
+    /* socialElement.append(card); */
    
-})
+/* }) */
