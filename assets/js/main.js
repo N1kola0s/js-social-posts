@@ -48,6 +48,17 @@ const posts = [
     post_image: 'https://picsum.photos/200/100',
     like: 30
 
+},
+
+{
+    id_post:3,
+    user_name: 'Terza Persona',
+    user_image: 'https://picsum.photos/60/60',
+    date: '11/15/2022',
+    text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas amet voluptates molestias nisi corrupti excepturi saepe nemo repudiandae',
+    post_image: '',
+    like: 90
+
 }
 ];
 
@@ -75,6 +86,7 @@ posts.forEach((post, i) =>{
 
     let card = document.createElement("div");
 
+
     //stampo il contenuto al suo interno
         card.innerHTML =  
         `
@@ -93,7 +105,7 @@ posts.forEach((post, i) =>{
                     
                     <p class="text px-4 mb-0">${post.text}</p>
 
-                    <img class="p-4" src="${post.post_image}" alt="post-image">
+                    <img class="p-4" src="${post.post_image}">
 
                     <div class="post_like d-flex justify-content-around align-items-center pb-4">
                         <div><i class="fa-solid fa-thumbs-up"></i> Mi piace</div>

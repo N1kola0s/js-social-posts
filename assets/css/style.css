@@ -9,6 +9,7 @@ img {
 }
 
 h1{
+    font-size: 48px;
     font-weight: 800;
 }
 
@@ -19,7 +20,7 @@ h5 {
 /* MAIN */
 
 .card {
-    width: 40%;
+    width: 600px;
     margin: auto;
     box-shadow: 0px 0px 5px 1px #001824;
    
