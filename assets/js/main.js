@@ -49,7 +49,6 @@ const posts = [
     like: 30
 
 },
-
 {
     id_post:3,
     user_name: 'Terza Persona',
@@ -89,33 +88,87 @@ posts.forEach((post, i) =>{
 
     //stampo il contenuto al suo interno
         card.innerHTML =  
+
         `
-            <div class="card my-5">
-                    <div class="card_top d-flex align-items-center pt-4">
+        <div class="card my-5">
+            <div class="card_top d-flex align-items-center pt-4">
 
-                        <div class="icon_image d-inline-block">
-                            <img class="rounded-circle"src="${post.user_image}" alt="profile-image" >
-                        </div>
+                <div class="icon_image d-inline-block">
+                        <img class="rounded-circle"src="${post.user_image}" alt="profile-image" >
+                </div>
 
-                        <div class="profile_info d-inline-block">
-                            <h5 class="name">${post.user_name}</h5> 
-                            <div class="date">${post.date}</div>
-                        </div>
-                    </div>
-                    
-                    <p class="text px-4 mb-0">${post.text}</p>
+                <div class="profile_info d-inline-block">
+                        <h5 class="name">${post.user_name}</h5> 
+                        <div class="date">${post.date}</div>
+                </div>
+            </div>
+                
+            <p class="text px-4 mb-0">${post.text}</p>
 
-                    <img class="p-4" src="${post.post_image}">
+            <img class="p-4" src="${post.post_image}">
 
-                    <div class="post_like d-flex justify-content-around align-items-center pb-4">
-                        <div><i class="fa-solid fa-thumbs-up"></i> Mi piace</div>
-                        <div class="like">Piace a <strong>${post.like}</strong> persone</div>
-                    </div>   
+            <div class="post_like d-flex justify-content-around align-items-center pb-4">
+
+                <div class="like" role="button"><i class="fa-solid fa-thumbs-up"></i> Mi piace
                 </div>  
+
+                <div id="${post.id_post}" class="like_counter">Piace a <strong>${post.like}</strong> persone
+                </div>
+            </div>
+
+        </div>
       
         `; 
 
     //appendo quanto creato all'interno di socialElement nella dom
     socialElement.append(card);
+
+    //Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+
+    //dichiaro una variabile in cui richiamo i like 
+    const btn = card.querySelector(".like");
+
+    //all'evento click imposto una funzione per eseguire delle azioni
+    btn.addEventListener("click", addLike);
+
+    function addLike () {
+        //aggiungo il toggle con classe active
+        this.classList.toggle("active");
+
+        const myLike = document.getElementById(post.id_post)
+
+        //imposto la condizione che verifica se il mio ogetto contiene la classe active
+        
+        if(this.classList.contains("active")){
+
+            //incremento il numero dei like sul post
+            post.like = post.like + 1 
+
+            //lo stampo nella DOM
+            myLike.innerHTML= 
+            `
+            <div id="${post.id_post}" class="like_counter">
+            Piace a <strong>${post.like}</strong>persone
+            </div>
+            `
+
+        } else {
+
+            //decremento il numero dei like del post
+            post.like = post.like -1
+
+            //stampo nella DOM
+            myLike.innerHTML= 
+            `
+            <div id="${post.id_post}" class="like_counter">
+            Piace a <strong>${post.like}</strong> persone
+            </div>
+
+            `
+        };
+
+
+    };
+    
    
- }) 
+});
