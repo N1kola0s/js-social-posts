@@ -67,9 +67,13 @@ const posts = [
 
 const socialElement = document.querySelector(".post")
 
+//dichiaro un array vuoto dove andranno gli ID dei post ai quali abbiao messo i like 
+const postLiked = [];
 
-posts.forEach((post, i) =>{ 
-     post = posts[i]; 
+
+
+posts.forEach((post,i) =>{ 
+    post = posts[i]; 
 
     /* console.log(typeof post);  */
 
@@ -151,6 +155,9 @@ posts.forEach((post, i) =>{
             Piace a <strong>${post.like}</strong>persone
             </div>
             `
+            //Salviamo nell'arrey postLiked gli id dei post ai quali abbiamo messo il like.
+            postLiked.push(post.id_post);
+        
 
         } else {
 
@@ -165,8 +172,12 @@ posts.forEach((post, i) =>{
             </div>
 
             `
+            //rimuovo all'array postLiked gli id dei post ai quali abbiamo tolto il like.
+            postLiked.pop(post.id_post);
         };
 
+        //stampo gli elementi dell'array postLiked
+        console.log(postLiked);
 
     };
     
