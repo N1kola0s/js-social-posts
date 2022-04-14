@@ -31,7 +31,8 @@ Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e inc
 const posts = [
 {
     id_post:1,
-    user_name: 'Phil Mangione',
+    user_firstname: 'Phil',
+    user_lastname:'Mangione',
     user_image:'https://picsum.photos/60/60',
     date:'05/27/2021',
     text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas amet voluptates molestias nisi corrupti excepturi saepe nemo repudiandae',
@@ -41,7 +42,8 @@ const posts = [
 },
 {
     id_post:2,
-    user_name: 'Sofia Perlari',
+    user_firstname: 'Sofia',
+    user_lastname:'Perlari',
     user_image: 'https://picsum.photos/60/60',
     date: '07/20/2022',
     text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas amet voluptates molestias nisi corrupti excepturi saepe nemo repudiandae',
@@ -51,8 +53,9 @@ const posts = [
 },
 {
     id_post:3,
-    user_name: 'Terza Persona',
-    user_image: 'https://picsum.photos/60/60',
+    user_firstname: 'Terza',
+    user_lastname:'Persona',
+    user_image: '', /* https://picsum.photos/60/60 */
     date: '11/15/2022',
     text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas amet voluptates molestias nisi corrupti excepturi saepe nemo repudiandae',
     post_image: '',
@@ -72,10 +75,8 @@ const postLiked = [];
 
 
 
-posts.forEach((post,i) =>{ 
-    post = posts[i]; 
+posts.forEach(post => { 
 
-    /* console.log(typeof post);  */
 
    /*  console.log(post.id_post)
     console.log(post.user_name)
@@ -89,7 +90,6 @@ posts.forEach((post,i) =>{
 
     let card = document.createElement("div");
 
-
     //stampo il contenuto al suo interno
         card.innerHTML =  
 
@@ -97,13 +97,14 @@ posts.forEach((post,i) =>{
         <div class="card my-5">
             <div class="card_top d-flex align-items-center pt-4">
 
-                <div class="icon_image d-inline-block">
-                        <img class="rounded-circle"src="${post.user_image}" alt="profile-image" >
+            
+                <div id="profile_${post.id_post}" class="icon_image d-inline-block">
+                    <img class="rounded-circle"src="${post.user_image}" >
                 </div>
 
                 <div class="profile_info d-inline-block">
-                        <h5 class="name">${post.user_name}</h5> 
-                        <div class="date">${post.date}</div>
+                    <h5 class="name">${post.user_firstname} ${post.user_lastname}</h5> 
+                    <div class="date">${post.date}</div>
                 </div>
             </div>
                 
@@ -126,6 +127,24 @@ posts.forEach((post,i) =>{
 
     //appendo quanto creato all'interno di socialElement nella dom
     socialElement.append(card);
+
+
+    //imposto una condizione nel caso un utente non abbia un'immagine profilo
+    if(post.user_image === ""){
+        //dichiaro una variabile che richiami l'elemento della DOM 
+        const myImg = document.getElementById(`profile_${post.id_post}`)
+
+        //dichiaro una variabile che come valore avrà le iniziali del nome dell'utente in maiuscolo
+        const user_initials = post.user_firstname.charAt(0).toUpperCase() + post.user_lastname.charAt(0).toUpperCase();
+
+        //stampo nella DOM le iniziali
+        myImg.innerHTML = 
+        `
+        <div id="profile_${post.id_post}" class="d-inline-block">
+            <div class="name_initials d-flex justify-content-center align-items-center rounded-circle">${user_initials}</div>
+        </div>
+        `
+    }
 
     //Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
 
@@ -181,5 +200,6 @@ posts.forEach((post,i) =>{
 
     };
     
+
    
 });
