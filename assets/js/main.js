@@ -77,6 +77,7 @@ const postLiked = [];
 
 posts.forEach(post => { 
 
+    
 
    /*  console.log(post.id_post)
     console.log(post.user_name)
@@ -104,7 +105,7 @@ posts.forEach(post => {
 
                 <div class="profile_info d-inline-block">
                     <h5 class="name">${post.user_firstname} ${post.user_lastname}</h5> 
-                    <div class="date">${post.date}</div>
+                    <div class="date">${newFormatDate(post.date)}</div> 
                 </div>
             </div>
                 
@@ -203,3 +204,25 @@ posts.forEach(post => {
 
    
 });
+
+//imposto una funzione in cui converto la data inserita nel formato italiano
+
+function newFormatDate (inputDate){
+    const date = new Date(inputDate);
+    /* console.log(date); */
+
+    const day = date.getDate(inputDate);
+    /* console.log(day) */
+    const month = date.getMonth(inputDate) + 1;
+    /* console.log(month) */
+    const year = date.getFullYear(inputDate); 
+    /* console.log(year)  */
+
+    
+    return day + "/" + month + "/" + year;
+}
+
+
+
+
+    
